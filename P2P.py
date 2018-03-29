@@ -26,9 +26,6 @@ def progressbar(cur, total):
     if cur == total:
         sys.stdout.write('\n')
 
-
-
-
 def sender():
     # initialize socket
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Initialize the socket
@@ -87,10 +84,6 @@ def sender():
         print "\n>>file transmission failed!"
     return
 
-
-
-
-
 def receiver():
     # get hostname and initialize port
     hostname = socket.gethostname()
@@ -137,7 +130,7 @@ def receiver():
             elif filesize < 1024 * 1024 * 1024:
                 print "\n>>receiving file " + filename + " " + str(filesize / 1024 / 1024 ) + "MB"
             else:
-                print "\n>>receiving file " + filename + " " + str(filesize / 1024 / 1024 / 1024) + "MB"
+                print "\n>>receiving file " + filename + " " + str(filesize / 1024 / 1024 / 1024) + "GB"
 
             savedFilename = filename.strip('\0')
             fp = open(sys.path[0]+"/"+savedFilename, 'wb')
